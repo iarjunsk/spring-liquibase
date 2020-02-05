@@ -1,0 +1,1 @@
+INSERT INTO liquibase_demo.candidate VALUES ('edb87eb3-3806-453d-9229-b92565baa6cc', 'Arjun', 'Sunil', 'Kumar');

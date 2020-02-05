@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: liquibase-service
+
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/poc_db?currentSchema=liquibase_demo
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    continue-on-error: false
+
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: false
+
+  liquibase:
+    change-log: classpath:/db/changelog/app-changelog.xml
+    default-schema: liquibase_demo
